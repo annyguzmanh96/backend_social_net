@@ -34,7 +34,7 @@ const uploads = multer({
 const router = Router();
 
 // Definir rutas de user
-router.get("/test-user", ensureAuth, testUser);
+router.get("/test-user", testUser);
 router.post("/register", register);
 router.post("/login", login);
 router.get("/profile/:id", ensureAuth, profile);

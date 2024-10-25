@@ -3,9 +3,9 @@ import express from "express";
 import connection from "./database/connection.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-// import UserRoutes from "./routes/users.js";
-// import PublicationRoutes from "./routes/publications.js";
-// import FollowRoutes from "./routes/follows.js";
+import UserRoutes from "./routes/users.js";
+import PublicationRoutes from "./routes/publications.js";
+import FollowRoutes from "./routes/follows.js";
 
 // Mensaje de Bienvenida para verificar ejecutó la API de Node
 console.log("API Node en ejecución");
@@ -31,10 +31,10 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// // Configurar rutas del aplicativo (módulos)
-// app.use("/api/user", UserRoutes);
-// app.use("/api/publication", PublicationRoutes);
-// app.use("/api/follow", FollowRoutes);
+// Configurar rutas del aplicativo (módulos)
+app.use("/api/user", UserRoutes);
+app.use("/api/publication", PublicationRoutes);
+app.use("/api/follow", FollowRoutes);
 
 // Configurar el servidor de Node
 app.listen(puerto, () => {
