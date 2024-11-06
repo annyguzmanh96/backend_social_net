@@ -1,6 +1,6 @@
-import jwt from "jwt-simple";
-import moment from "moment";
-import dotenv from "dotenv";
+import jwt from 'jwt-simple';
+import moment from 'moment';
+import dotenv from 'dotenv';
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config();
@@ -15,11 +15,14 @@ const createToken = (user) => {
     userId: user._id,
     role: user.role,
     iat: moment().unix(), // fecha de emisión
-    exp: moment().add(7, "days").unix(), // fecha de expiración
-  };
+    exp: moment().add(7, 'days').unix() // fecha de expiración
+  }
 
   // Devolver el jwt token codificado
   return jwt.encode(payload, secret);
 };
 
-export { secret, createToken };
+export {
+  secret,
+  createToken
+};

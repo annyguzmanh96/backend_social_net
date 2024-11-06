@@ -5,17 +5,17 @@ const PublicationSchema = Schema({
   user_id: {
     type: Schema.ObjectId,
     ref: "User",
-    required: true,
+    required: true
   },
   text: {
     type: String,
-    required: true,
+    required: true
   },
   file: String,
   created_at: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 });
 
 // Configurar plugin de paginación
